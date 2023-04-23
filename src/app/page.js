@@ -1,113 +1,142 @@
+import Navbar from '@/components/Navbar'
+import Navbar2 from '@/components/Navbar2'
+import Sidebar from '@/components/Sidebar'
 import Image from 'next/image'
+import {AiFillMessage} from 'react-icons/ai'
+// import {image1} from '../Icons/clock-blue.svg'
+// import {Imgg} from '../assets/Data-Analysis.png'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <div className='fixed top-0 w-full'>
+      {/* Top Nav */}
+    <Navbar/>
+    {/* Sub Nav */}
+    <Navbar2/>
+    {/* Side Menu */}
+    <Sidebar/>
+    </div>
+    {/* Main Content */}
+    <main className='relative flex flex-col gap-8 p-12 mt-24 ml-32 -z-10'>
+      <h3 className='text-2xl font-bold'>Upcoming Certifications</h3>
+      {/* Certifications */}
+      <div className='flex items-center gap-6 px-10 py-2 text-black bg-white border max-w-max border-sky-600'>
+        <div className=''>
+        <Image src='/Icons/Data-Analysis.png' alt="Picture of the author" width={60} height={50} className='rounded-full ' />
+        </div>
+        <div className='flex flex-col gap-3'>
+          <div className='flex gap-2 px-6 bg-gray-200 rounded-md'>
+            <span>Certification</span>
+            <hr className='w-[2px] h-[14px] my-auto bg-black' />
+            <span>Attempt 1</span>
+          </div>
+          <p className='text-lg'>
+            DATA ANALYSIS <br />
+            CERTIFICATION
+          </p>
+          <div className='flex gap-2 px-6 rounded-full bg-sky-300'>
+            <span>COMPLETED</span>
+            <hr className='w-[2px] h-[14px] my-auto bg-black' />
+            <span>21 MAR 2022</span>
+          </div>
+        </div>
+        {/* Exam Structure */}
+        <div className='flex flex-col gap-3 mx-10'>
+          <span className='font-bold '>Exam Structure</span>
+          <div className='flex items-center gap-3'>
+            <span>Round 1</span>
+            <span className='px-2 py-1 bg-gray-200 rounded-full'>MCQS</span>
+            <span className='px-2 py-1 bg-gray-200 rounded-full'>CODING</span>
+          </div>
+          <div className='flex items-center gap-3'>
+            <span>Round 2</span>
+            <span className='px-2 py-1 bg-gray-200 rounded-full'>PROJECT</span>
+          </div>
+        </div>
+        <button className='px-2 py-1 uppercase bg-white border rounded-full cursor-pointer border-sky-500 text-sky-500'>View EXAM Details</button>
+      </div>
+      <h3 className='text-2xl font-bold'>Continue Learning</h3>
+      <div className='flex'>
+        {/* Moudule Details */}
+        <div className='p-8 text-black bg-white border border-sky-600'>
+          {/* Upper */}
+          <div className='flex items-center gap-6 mb-2'>
+            <div>
+              <Image src='/Icons/Data Wrangling.png' alt="Picture of the author" width={60} height={50} className='rounded-full ' />
+            </div>
+            <div>
+              <p className='text-lg'>Data Wrangling & <br />VISULAIZATION</p>
+              <div className='flex items-center'>
+                <div className='w-8 h-8 bg-yellow-300 rounded-full'></div>
+                <span className='text-sky-600'>Test Instructor</span>
+              </div>
+            </div>
+          </div>
+          {/* Lower */}
+          <div className='px-6'>
+            <div className='flex items-center gap-2'>
+              <span className='text-xs'>Live Sessions</span>
+              <div>
+                <span className='text-xs'>0/12</span>
+                <div className='h-2 w-[160px] rounded-full bg-sky-300'></div>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-xs'>Live Sessions</span>
+              <div>
+                <span className='text-xs'>0/12</span>
+                <div className='h-2 w-[160px] rounded-full bg-sky-300'></div>
+              </div>
+            </div>
+            <div className='flex items-center gap-2'>
+              <span className='text-xs'>Live Sessions</span>
+              <div>
+                <span className='text-xs'>0/12</span>
+                <div className='h-2 w-[160px] rounded-full bg-sky-300'></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        {/* Middle */}
+        <div className='relative flex flex-col gap-2 px-8 py-6 text-black bg-white border border-sky-500'>
+          <span className='text-lg'>Todays Plan</span>
+          <span className='text-xs'>21 March 2022</span>
+          <p className='my-3 text-sky-600'>
+            Data Transformation <br /> using Pandas 
+          </p>
+          <div className='flex items-center justify-between gap-10'>
+            <span className='text-sm'>Daily Feedback</span>
+            <span className='text-xs'>opens at 07:30 PM</span>
+          </div>
+          <div className='flex flex-col'>
+            <button className='px-2 py-1 text-sm bg-gray-200 rounded-full max-w-max'>JOIN LIVE SESSION</button>
+            <span className='pl-4 text-xs'>BEGINS AT 07:30 PM</span>
+          </div>
+          <span className='right-0 -top-[30px] absolute cursor-pointer text-sky-500'>VIEW MODULES DETAILS</span>
+        </div>
+        <div className='flex flex-col gap-4 px-8 py-6 ml-16 text-black bg-white border rounded border-sky-600'>
+          <span>Progress Overview</span>
+          <div className='relative flex justify-between w-full gap-10 px-3 py-4 border rounded-md border-sky-600'>
+            <span>0%</span>
+            <span>Overall Grade</span>
+            <div className='absolute bottom-0 left-1 rounded-full w-[95%] h-2 bg-gray-400'></div>
+          </div>
+          <div className='relative flex justify-between w-full px-3 py-4 border rounded-md border-sky-600'>
+            <span>0%</span>
+            <span>Overall Grade</span>
+            <div className='absolute bottom-0 left-1 rounded-full w-[95%] h-2 bg-gray-400'></div>
+          </div>
+          <span className='text-xs text-sky-500'>VIEW DETAILED OVERVIEW</span>
         </div>
       </div>
+      <div className='absolute flex items-center justify-center w-16 h-16 bg-blue-700 rounded-full cursor-pointer bottom-10 right-8'>
+        <AiFillMessage size={30}/>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
+    </>
+    
   )
 }
